@@ -20,7 +20,8 @@ const MediaDisplay: React.FC = () => {
       try {
         const response = await axios.get<MediaFile[]>('http://localhost:5000/downloads');
         if (response.data) {
-          setMediaFiles(response.data);
+          const sortedFiles = response.data.sort((a, b) => new Date(b.lastModified).getTime() - new Date(a.lastModified).getTime());
+          setMediaFiles(sortedFiles);
         } else {
           setErrorMessage('No media files found.');
         }
@@ -29,9 +30,10 @@ const MediaDisplay: React.FC = () => {
         console.error(error);
       }
     };
-    
+  
     fetchMediaFiles();
   }, []);
+  
 
   return (
     <div>

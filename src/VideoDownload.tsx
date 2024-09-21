@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+const formatDescriptions: { [key: string]: string } = {
+  best: 'Download the best available format.',
+  mp4: 'Download in MP4 video format.',
+  mp3: 'Download as an MP3 audio file.',
+  audio: 'Download only the audio (best available format).',
+  video: 'Download only the video (best available format).',
+};
+
 const VideoDownload: React.FC = () => {
   const [url, setUrl] = useState('');
   const [format, setFormat] = useState('mp3'); // Preselect 'mp3' as the default format
@@ -42,7 +50,6 @@ const VideoDownload: React.FC = () => {
     } catch (error) {
       console.error('Error fetching formats:', error);
       setErrorMessage('Failed to load formats, showing default options');
-//      setFormats(['mp3']); // Set only 'mp3' as the fallback option on error
       setFormat('mp3'); // Set 'mp3' as the default format
     }
   };
@@ -64,9 +71,9 @@ const VideoDownload: React.FC = () => {
         onFocus={(e) => e.target.select()} // Automatically selects all text on focus
         placeholder="Enter YouTube URL"
       />
-      <select value={format} onChange={(e) => setFormat(e.target.value)}>
+      <select title="Select download format" value={format} onChange={(e) => setFormat(e.target.value)}>
         {formats.map((f) => (
-          <option key={f} value={f}>
+          <option key={f} value={f} title={formatDescriptions[f] || 'No description available'}>
             {f}
           </option>
         ))}
