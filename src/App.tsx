@@ -18,9 +18,52 @@ const App: React.FC = () => {
         <VideoDownload />
         <MediaDisplay />
         <div>
-          <a target="Repo" href="https://github.com/Raalnan1/MediaSocializer">
-            Repo
-          </a>
+          <h3>Links</h3>
+          <ul>
+
+            <li>
+              <a
+                target="Repo"
+                href="https://github.com/Raalnan1/MediaSocializer"
+              >
+                Repo
+              </a>
+            </li>
+            <li>
+              <a
+                target="Repo"
+                href="https://github.com/Raalnan1/MediaSocializer/blob/main/README.md"
+              >
+                ReadMe
+              </a>
+            </li>
+            <li>
+              <a
+                target="Repo"
+                href="https://github.com/Raalnan1/MediaSocializer/blob/main/server.md"
+              >
+                Server
+              </a>
+            </li>
+
+            <li>
+              <a
+                target="Repo"
+                href="https://github.com/Raalnan1/MediaSocializer/blob/main/src/MediaDisplay.md"
+              >
+                Media Display Component
+              </a>
+            </li>
+
+            <li>
+              <a
+                target="Repo"
+                href="https://github.com/Raalnan1/MediaSocializer/blob/main/src/VideoDownload.md"
+              >
+                Video Download Component
+              </a>
+            </li>
+          </ul>
         </div>
       </header>
     </div>
