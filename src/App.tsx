@@ -11,6 +11,9 @@ const App: React.FC = () => {
         <p>Download videos to your <a target="downloads" href="http://localhost:5000/downloads">computer</a>.</p>
         <VideoDownload />
         <MediaDisplay />
+        <div>
+          <a target="Repo" href = "https://github.com/Raalnan1/MediaSocializer">Repo</a>
+        </div>
       </header>
     </div>
   );
