@@ -7,8 +7,8 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>YT-Bravo</h1>
-        <p>Download YouTube videos in <a target="downloads" href="http://localhost:5000/downloads">MP4</a> format</p>
+        <h1>Media Socializer</h1>
+        <p>Download videos to your <a target="downloads" href="http://localhost:5000/downloads">computer</a>.</p>
         <VideoDownload />
         <MediaDisplay />
       </header>
